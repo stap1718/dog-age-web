@@ -1,17 +1,3 @@
-# Screenshots
-
-## Home Screen
-
-![Home Screen](static/img/homepage.png)
-
-## Results Screen
-
-![Results Screen](static/img/results.png)
-
-# Live Demo
-
-Coming Soon
-
 # Learning Objectives
 
 This project was created to practice:
