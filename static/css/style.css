@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #2C3E50;
+    --card-color: #ECF0F1;
+    --button-color: #3498DB;
+    --clear-color: #E74C3C;
+    --accent-color: #1ABC9C;
+    --text-color: #1f2933;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 16px;
+}
+
+.card {
+    width: min(620px, 100%);
+    background: var(--card-color);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.dog-form {
+    display: grid;
+    gap: 12px;
+}
+
+label, 
+legend {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #b8c2cc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+fieldset {
+    border: 1px solid #b8c2cc;
+    border-radius: 10px;
+    padding: 14px;
+    background: white;
+}
+
+.radio-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 16px;
+    font-weight: normal;
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary-button {
+    background: var(--button-color);
+    color: white;
+}
+
+.secondary-button {
+    background: var(--clear-color);
+    color: white;
+}
+
+.alert {
+    background: #ffe8e8;
+    color: #8a1f1f;
+    border: 1px solid #ffb3b3;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 18px 0;
+    text-align: center;
+}
+
+.result-card {
+    background: white;
+    border-left: 6px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 24px;
+}
+
+.result-card h2 {
+    margin-top: 0;
+}
+
+.dog-image {
+    display: block;
+    max-width: 100%;
+    margin: 24px auto 0;
+    border-radius: 12px;
+}

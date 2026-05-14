@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dog Age Calculator Pro</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <main class="page">
+            <section class="card">
+                <h1>Dog Age Calculator Pro</h1>
+                <p class="subtitle">Convert a dog's age into dog years using a web-facing Python app.</p>
+
+                {% if error_message %}
+                <div class="alert" role="alert">
+                    {{ error_message }}
+                </div>
+                {% endif %}
+
+                <form method="POST" class="dog-form">
+                    <label for="owner">Your Name</label>
+                    <input type="text" 
+                    id="owner" 
+                    name="owner" 
+                    value="{{ form_data.owner }}" 
+                    placeholder="Enter owner name">
+
+                    <label for="dog_name">Dog's Name</label>
+                    <input type="text" 
+                    id="dog_name" 
+                    name="dog_name" 
+                    value="{{ form_data.dog_name }}" 
+                    placeholder="Enter dog's name">
+
+                    <label for="dog_age">Dog's Age</label>
+                    <input type="number" 
+                    id="dog_age" 
+                    name="dog_age" 
+                    value="{{ form_data.dog_age }}" 
+                    placeholder="Enter age in human years"
+                    min="0">
+
+                    <fieldset>
+                        <legend>Age Classification</legend>
+                        {% for stage_name, stage_value in life_stages %}
+                            <label class="radio-option">
+                                <input type="radio" 
+                                name="life_stage" 
+                                value="{{ stage_value }}" 
+                                {% if form_data.life_stage==stage_value %}checked{% endif %}>
+                                {{ stage_name }}
+                            </label>
+                        {% endfor %}
+
+                    </fieldset>
+                    <div class="button-row">
+                        <button type="submit" class="primary-button">Calculate</button>
+                        <a href="/" class="secondary-button">Clear</a>
+                    </div>
+                </form>
+
+                {% if result %}
+                    <section class="result-card">
+                        <h2>Results</h2>
+                        <p><strong>Owner:</strong> {{ result.owner }}</p>
+                        <p><strong>Dog Name:</strong> {{ result.dog_name }}</p>
+                        <p><strong>Human Years:</strong> {{ result.dog_age }}</p>
+                        <p><strong>Dog Years:</strong> {{ result.dog_years }}</p>
+                        <p><strong>Life Stage:</strong> {{ result.life_stage }}</p>
+                    </section>
+
+                    <img src="{{ url_for('static', filename='img/dogs.png') }}" alt="Dogs" class="dog-image">
+                {% endif %}
+            </section>
+
+        </main>
+
+    </body>
+</html>
